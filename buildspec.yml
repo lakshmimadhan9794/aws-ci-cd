@@ -1,11 +1,17 @@
 version: 0.2
-
 phases:
+  install:
+    runtime-versions:
+      java: corretto17   # Use the appropriate JDK version
+    commands:
+      - echo "Installing Maven"
+      - yum install -y maven
   build:
     commands:
-      - echo Build started on `date`
+      - echo "Building with Maven"
       - mvn --quiet install
 artifacts:
   files:
-    - target/messageUtil-1.0.jar
+    - '**/*'
+
 
