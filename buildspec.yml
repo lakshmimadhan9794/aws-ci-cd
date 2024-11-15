@@ -8,8 +8,8 @@ phases:
       - yum install -y maven
   build:
     commands:
-      - echo "Building with Maven"
-      - mvn --quiet install
+      - echo "Starting Maven build"
+      - mvn install
 artifacts:
   files:
     - '**/*'
